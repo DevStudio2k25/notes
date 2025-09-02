@@ -25,10 +25,13 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <AppBar 
-        isMobileMenuOpen={isMobileMenuOpen} 
-        setIsMobileMenuOpen={setIsMobileMenuOpen} 
-      />
+      {/* AppBar only visible on mobile devices (md breakpoint and below) */}
+      <div className="md:hidden">
+        <AppBar 
+          isMobileMenuOpen={isMobileMenuOpen} 
+          setIsMobileMenuOpen={setIsMobileMenuOpen} 
+        />
+      </div>
       <div className="flex flex-1">
         <Sidebar 
           isMobileMenuOpen={isMobileMenuOpen} 
